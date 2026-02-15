@@ -1,37 +1,102 @@
-# Job Aboard - Microservices Training Project
+# Workshop 3 – Implémentation de l’API Gateway
 
-## 📌 About the Project
-**Job Aboard** is an **academic project** designed to help students **master microservices architecture** through a **30-hour hands-on training program**. The project focuses on building a **job listing management system** using a microservices approach.
-## 📌Project Architecture
-![](https://github.com/badi3a/JobBoard_Microservice/blob/main/documentation/diag/microservices-global-architecture.drawio%20(2).png)
+🎓 **Formation : Microservices**  
+📅 **Année universitaire : 2025–2026**  
+🧑‍💻 **Workshop 3**
 
-## 🎯 Main Goal
-The primary objective of this project is to provide students with:  
-✅ A **practical understanding** of microservices concepts.  
-✅ Experience in **service decomposition, inter-service communication, and scalability**.  
-✅ Hands-on training with **modern tools and frameworks** used in microservices development.
+---
 
-## 🛠️ Technologies & Concepts
-Throughout the training, students will work with:
-- **Spring Boot / Node.js** (for microservices implementation)
-- **API Gateway & Service Discovery**
-- **Message Brokers (Kafka, RabbitMQ, etc.)**
-- **Containerization (Docker, Kubernetes)**
-- **Database Management (SQL/NoSQL)**
-- **Security with Keycloak (Authentication & Authorization)**
-- **Frontend with Angular Framework**
+## 🎯 Objectif du workshop
 
-## 📅 Training Duration
-**30 hours** of guided learning and project development.
+L’objectif de ce workshop est de mettre en place une **API Gateway** jouant le rôle de point d’entrée unique vers les microservices.
 
-## 🚀 Learning Outcome
-By the end of this training, students will be able to **design, develop, and deploy scalable and secure microservices applications**, preparing them for real-world software architecture challenges.
+À la fin de ce workshop, l’étudiant sera capable de :
 
----  
----  
-## 🎓 Acknowledgment
-This project is part of the academic training provided by **ESPRIT School of Engineering**, aiming to equip students with industry-relevant skills in modern software development.
-## 👨‍🏫 Contact
-Connect with me on LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/badiabouhdid/)
+- Comprendre le rôle d’une API Gateway dans une architecture microservices
+- Mettre en place une configuration **statique**
+- Mettre en place une configuration **dynamique avec Eureka**
+- Observer le mécanisme de **load balancing**
+- Comparer les approches statique et dynamique
 
+---
 
+## 🧩 Architecture mise en place
+
+Dans ce workshop, nous mettons en œuvre :
+
+- 🖥️ Un **API Gateway**
+- 📦 Les microservices existants (Candidat, Job)
+- 🔁 Routage des requêtes via la Gateway
+- ⚖️ Load balancing automatique via Eureka
+
+L’API Gateway agit comme un **intermédiaire intelligent** qui :
+
+- Reçoit les requêtes clients
+- Sélectionne une instance disponible
+- Redirige la requête vers le microservice approprié
+
+---
+
+## 🛠️ Technologies utilisées
+
+- Java 17
+- Spring Boot
+- Spring Cloud Gateway
+- Spring Cloud Netflix Eureka Client
+- Maven
+- IntelliJ IDEA
+
+---
+
+## 📄 Énoncé du workshop
+
+L’énoncé détaillé du Workshop 3 est disponible au format PDF :
+
+👉 [Télécharger l’énoncé du Workshop 3](Implémentation API Gateway.pdf)
+
+---
+
+## 📝 Travail à faire (Rendu)
+
+- Implémenter une **configuration statique**
+- Implémenter une **configuration dynamique avec Eureka**
+- Activer les logs de routage
+- Identifier l’algorithme de load balancing utilisé
+- Tester l’algorithme **Random** uniquement pour le service Candidat
+- Comparer les deux approches (statique vs dynamique)
+
+---
+
+## ⚖️ Comparaison des approches
+
+| Approche | Utilise Eureka ? | Avantages | Inconvénients |
+|-----------|------------------|------------|---------------|
+| Dynamique (lb://service) | ✅ Oui | Pas besoin de connaître l’URL exacte, support multi-instances, load balancing automatique | Dépendance à Eureka |
+| Statique (uri http://...) | ❌ Non | Simple et rapide à configurer | Non adapté aux environnements dynamiques |
+
+---
+
+## ✅ Rendu attendu
+
+- Projet **API Gateway fonctionnel**
+- Routage correct vers les microservices
+- Intégration réussie avec Eureka
+- Load balancing observable en console
+- Code structuré et propre
+- Projet poussé sur **GitHub**
+
+---
+
+💡 **Conseil :**  
+Démarrez toujours le serveur Eureka avant de lancer l’API Gateway et les microservices.
+
+🚀 Bon courage et bonne implémentation !
+
+---
+
+## 🏫 Cadre pédagogique
+
+### Enseignante : [Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)
+
+Ce workshop a été développé dans le cadre du module **Applications Web Distribuées**,  
+à l’**École d’Ingénieurs ESPRIT**.
